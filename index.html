@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Draw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="settings-toggle-button" class="settings-icon-btn icon-btn" aria-label="Toggle Settings">⚙</button>
+
+    <div class="page-container">
+        <div class="main-content-area">
+            <div class="winner-display-container">
+                <div id="winner-display" class="winner-display">
+                    </div>
+            </div>
+            <div id="confetti-container"></div>
+        </div>
+
+        <div class="draw-controls">
+            <button id="draw-button">Draw</button>
+            <button id="clear-winner-button" class="secondary-button">Clear Result</button>
+        </div>
+
+        <div id="settings-section" class="settings-section">
+            <h2>Settings</h2>
+
+            <label for="name-list-input">Name List</label>
+            <p class="settings-hint">Separate each name by a line break</p>
+            <textarea id="name-list-input" rows="10" placeholder="Enter names here, one per line..."></textarea>
+
+            <div class="toggle-option">
+                <label for="remove-winner-toggle">Remove winner from list</label>
+                <label class="switch">
+                    <input type="checkbox" id="remove-winner-toggle" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="toggle-option">
+                <label for="sound-toggle">Enable sound effect</label>
+                <label class="switch">
+                    <input type="checkbox" id="sound-toggle" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <label for="draw-duration-input">Draw Duration (seconds):</label>
+            <input type="number" id="draw-duration-input" value="5" min="1" max="30" step="1">
+
+            <hr class="settings-divider">
+            <h3>Appearance</h3>
+
+            <label for="theme-select">Theme Gradient</label>
+            <select id="theme-select">
+                <option value="red">Red (Default)</option>
+                <option value="jshine">Jshine</option>
+                <option value="coolsky">Cool Sky</option>
+                <option value="megatron">Megatron</option>
+                <option value="eveningsunshine">Evening Sunshine</option>
+                <option value="memariani">Memariani</option>
+                <option value="bydesign">By Design</option>
+                <option value="magic">Magic</option>
+                <option value="sublimelight">Sublime Light</option>
+            </select>
+
+            <label for="background-image-upload">Custom Background Image</label>
+            <input type="file" id="background-image-upload" accept="image/*">
+            <p class="settings-hint">Recommended: 16:9 (e.g., 1920x1080). Max ~2MB.</p>
+            <button id="clear-background-button" class="settings-inline-button">Clear Custom Background</button>
+
+            <div class="settings-color-picker-group">
+                <label for="winner-text-color-picker">Winner Name Text Color:</label>
+                <input type="color" id="winner-text-color-picker" value="#333333">
+            </div>
+
+            <div class="settings-font-size-group">
+                <label for="winner-font-size-input">Winner Name Font Size (px):</label>
+                <input type="number" id="winner-font-size-input" value="80" min="20" max="200" step="1">
+            </div>
+
+            <hr class="settings-divider">
+
+            <div class="toggle-option">
+                <label for="advanced-settings-toggle">Advanced Settings</label>
+                <label class="switch">
+                    <input type="checkbox" id="advanced-settings-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div id="advanced-settings-content" class="advanced-settings-content">
+                <h3>Advanced Options</h3>
+                <label for="always-win-names-input">Always Win Names</label>
+                <p class="settings-hint">Names in this list will always be selected if Advanced Settings are enabled. Separate each name by a line break.</p>
+                <textarea id="always-win-names-input" rows="5" placeholder="Enter names here, one per line..."></textarea>
+            </div>
+
+            <hr class="settings-divider">
+
+            <button id="save-settings-button">Save and Apply Settings</button>
+        </div>
+    </div>
+
+    <footer>
+        © KidxRain 2025
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
